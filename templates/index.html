@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Grocery Store</title>
+<title>Computer & Laptop</title>
 {% endblock %}
 
 {% block body %}
 <div class="card">
     <div class="card-header">
         <h2 class="text-center">Scraping Project</h2>
-        <p class="text-center">Scraping data of Fruit & Vegetables from 
-            <a href="https://www.luluhypermarket.com/">Lulu Hypermarket</a>
+        <p class="text-center">Scraping data of Computer & Laptop from 
+            <a href="https://walmart.com">Walmart</a>
         </p>
     </div>
 </div>
@@ -18,12 +18,14 @@
         {% for item in data %}
         <div class="col-sm-3 mt-4">
             <div class="card">
-                <img src="{{ item.image }}" class="card-img-top">
+                <img src="{{ item.image }}" height="250" width="250" class="card-img-top">
                 <div class="card-body">
                     <div>
-                        <strong>{{ item.title }}</strong><br>
-                        <strong>USD</strong> {{ item.price }}<br>
-                        <strong>Size:</strong> {{ item.weight }}
+                        <h4 class="text-center"><strong>USD</strong> {{ item.price }}</h4><br>
+                        <strong>Description:</strong><br>{{ item.description }}<br><br>
+                        <strong>{{ item.details }}</strong><br><br>
+                        <strong>Rating: </strong> {{ item.rating }}<br>
+                        <strong>Rate by: </strong> {{ item.rate_by }}
                     </div>
                 </div>
             </div>

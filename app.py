@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    with open('lulu.csv', 'r') as f:
+    with open('walmart.csv', 'r') as f:
         data = [dict(item) for item in csv.DictReader(f)]
 
         try:
@@ -13,7 +13,7 @@ def index():
         except:
             page = 0
 
-        items_per_page = 16
+        items_per_page = 12
 
         index_from = 0
 
